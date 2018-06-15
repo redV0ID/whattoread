@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	Search
+{% endblock %}
+
+{% block body %}
+	
+	<h2>go find some books</h2>
+	<p>{{ message }}</p>
+	<form action="{{ url_for('search') }}" method="post">
+		<input type="search" name="search">
+		<button>Go!</button>
+	</form>
+	<ul>
+		{% for book in books %}
+			<li>{{ book.title, book.year }}</li>
+		{% else %}
+			<p>No books found</p>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

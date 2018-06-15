@@ -1,0 +1,23 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+name = "pypi"
+verify_ssl = true
+
+
+[dev-packages]
+
+pylint = "*"
+
+
+[packages]
+
+flask = "*"
+flask-session = "*"
+"psycopg2" = "*"
+sqlalchemy = "*"
+
+
+[requires]
+
+python_version = "3.6"

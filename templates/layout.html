@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+</head>
+<body>
+	<header class="header">
+		<nav class="navbar">
+			<a class="nav-link" href="{{ url_for('index') }}">Home</a>
+			<a class="nav-link" href="{{ url_for('search') }}">Search</a>
+			<form class="nav-link" action="{{ url_for('logout')}}">
+				<button>Logout</button>
+			</form>
+		</nav>
+	</header>
+	<div class="container">
+		
+		{% if 'username' in session %}
+			<p>logged in as {{ session['username'] }}</p>
+		{% else %}
+			<p>not logged in</p>
+		{% endif %}
+		{% block body %}
+		{% endblock %}
+	</div>
+	<footer class="footer">
+		
+	</footer>
+</body>
+</html>

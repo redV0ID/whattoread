@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	Whattoread
+{% endblock %}
+
+{% block body %}
+	<h1>Welcome!</h1>
+	<p>You can register or login</p>
+	<form action="{{ url_for('register') }}">
+		<button>Register</button>
+	</form>
+	<form action="{{ url_for('login') }}">
+		<button>Login</button>
+	</form>
+	
+
+{% endblock %}
