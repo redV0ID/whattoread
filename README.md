@@ -1,3 +1,3 @@
-# Project 1
+# Whattoread
 
 Web Programming with Python and JavaScript
