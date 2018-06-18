@@ -58,11 +58,11 @@ def login():
     return render_template('login.html')
 
 
-@app.route("/search/", methods=['GET', 'POST'])
+@app.route("/search", methods=['GET', 'POST'])
 def search():
     if "username" in session:
         question = request.form.get('search') or ''
-        books = db.execute("SELECT * FROM books WHERE title LIKE :wildcard OR author LIKE :wildcard or isbn LIKE: wildcard",
+        books = db.execute("SELECT * FROM books WHERE title LIKE :wildcard OR author LIKE :wildcard or isbn LIKE :wildcard",
             {'wildcard': "%" + question + "%"}).fetchall()
 
         return render_template("search.html", books=books)

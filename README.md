@@ -1,3 +1,3 @@
 # Whattoread
 
-Web Programming with Python and JavaScript
+Wep application for booklovers
